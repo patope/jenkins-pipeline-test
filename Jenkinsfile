@@ -1,1 +1,24 @@
-build {}
+	pipeline {
+    	agent any
+      	stages {
+        	stage('Build 1') {
+        		when { expression { true } }
+          		steps {
+          			echo('1')
+          		}
+          	}
+        	stage('Build 2') {
+        		when { expression { echo('here') } }
+          		steps {
+          			echo('2')
+          		}
+          	}
+        	stage('Build 3') {
+        		when { expression { true } }
+          		steps {
+          			echo('3')
+
+          		}
+          	}
+        }
+	}
